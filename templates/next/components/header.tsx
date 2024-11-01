@@ -20,7 +20,7 @@ export function Header() {
         <div className="flex items-center space-x-4">
           <Dialog open={isSignInOpen} onOpenChange={setIsSignInOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline" className="text-gray-600 border-gray-300">
+              <Button variant="outline" className="border-gray-300">
                 <EmbeddedWallet walletCreationComponent={<div>Sign in</div>}>
                   <Address />
                 </EmbeddedWallet>

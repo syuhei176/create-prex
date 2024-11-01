@@ -1,13 +1,13 @@
-import { Swap, SwapToggleButton, SwapButton, SwapMessage, SwapAmountSimpleInput, SwapBalance, SwapTokenSelector } from "@prex0/uikit/swap"
+import { Swap, SwapToggleButton, SwapButton, SwapMessage, SwapAmountSimpleInput, SwapBalance, SwapTokenSelector, SwapAmountForm } from "@prex0/uikit/swap"
 import { Header } from "./header"
 import { ArrowDown, Info, Zap } from "lucide-react"
-import { USDC_TOKEN_ARBITRUM, WETH_TOKEN_ARBITRUM } from "@prex0/uikit";
+import { AmountFormInput, AmountFormMaxButton, USDC_TOKEN_ARBITRUM, WETH_TOKEN_ARBITRUM } from "@prex0/uikit";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { TokenSelector } from "./token-selector";
-import { CustomButton } from "./custom-button";
+import { Input } from "./ui/input";
 
 export function SwapPage() {
   return <div className="min-h-screen bg-prex-default text-gray-300 flex flex-col">
@@ -24,7 +24,17 @@ export function SwapPage() {
               <div className="space-y-2">
                 <Label htmlFor="from-amount" className="text-gray-400">You pay</Label>
                 <div className="flex space-x-2">
-                  <SwapAmountSimpleInput type="from" amount="0" className="h-10 bg-black/30 border border-gray-800/50 text-gray-300 rounded-md"/>
+                  <SwapAmountForm type="from" amount="0" >
+                    <div className="w-full flex items-center space-x-2 relative">
+                      <AmountFormInput>
+                        <Input />
+                      </AmountFormInput>
+                      <AmountFormMaxButton>
+                        <span className="w-12 absolute right-0 text-xs cursor-pointer">Max</span>
+                      </AmountFormMaxButton>
+                    </div>
+                  </SwapAmountForm>
+
                   <SwapTokenSelector
                     type="from"
                     token={USDC_TOKEN_ARBITRUM}
@@ -62,7 +72,12 @@ export function SwapPage() {
               <div className="space-y-2">
                 <Label htmlFor="to-amount" className="text-gray-400">You receive</Label>
                 <div className="flex space-x-2">
-                  <SwapAmountSimpleInput type="to" amount="0" className="bg-black/30 border border-gray-800/50 text-gray-300 rounded-md"/>
+                  <SwapAmountForm type="to" amount="0" >
+                    <AmountFormInput>
+                      <Input />
+                    </AmountFormInput>
+                  </SwapAmountForm>
+
                   <SwapTokenSelector
                     type="to"
                     token={WETH_TOKEN_ARBITRUM}
@@ -79,7 +94,7 @@ export function SwapPage() {
           <CardFooter className="flex flex-col pt-6">
             <SwapMessage className="text-xs text-gray-500"/>
             <SwapButton className="w-full">
-              <CustomButton>Swap</CustomButton>
+              Swap
             </SwapButton>
           </CardFooter>
         </Card>
