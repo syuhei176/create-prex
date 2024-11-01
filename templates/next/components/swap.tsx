@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { TokenSelector } from "./token-selector";
 import { Input } from "./ui/input";
 
 export function SwapPage() {
@@ -29,17 +28,19 @@ export function SwapPage() {
                       <AmountFormInput>
                         <Input />
                       </AmountFormInput>
-                      <AmountFormMaxButton>
+                      <AmountFormMaxButton asChild>
                         <span className="w-12 absolute right-0 text-xs cursor-pointer">Max</span>
                       </AmountFormMaxButton>
                     </div>
                   </SwapAmountForm>
+                  <div className="w-[148px]">
+
                   <SwapTokenSelector
                     type="from"
                     token={USDC_TOKEN_ARBITRUM}
-                  >
-                    <TokenSelector />
-                  </SwapTokenSelector>
+                      showImage={false}
+                    />
+                  </div>
                 </div>
                 <div>
                   <SwapBalance type="from" className="text-gray-400 text-sm"/>
@@ -76,13 +77,14 @@ export function SwapPage() {
                       <Input />
                     </AmountFormInput>
                   </SwapAmountForm>
+                  <div className="w-[148px]">
+                    <SwapTokenSelector
+                      type="to"
+                      token={WETH_TOKEN_ARBITRUM}
+                      showImage={false}
+                      />
+                  </div>
 
-                  <SwapTokenSelector
-                    type="to"
-                    token={WETH_TOKEN_ARBITRUM}
-                  >
-                    <TokenSelector />
-                  </SwapTokenSelector>
                 </div>
                 <div>
                   <SwapBalance type="to" className="text-gray-400 text-sm"/>
