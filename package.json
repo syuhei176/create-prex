@@ -1,6 +1,6 @@
 {
   "name": "create-prex",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "create prex app",
   "scripts": {
     "build": "bun run clean && bun run build:esm+types",
