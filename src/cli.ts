@@ -164,14 +164,13 @@ async function init() {
   if(passkeyWallet) {
     await fs.promises.writeFile(
       envPath,
-      `NEXT_PUBLIC_PREX_PROJECT_NAME=${projectName}\nNEXT_PUBLIC_PREX_POLICY_ID=${policyId}\nNEXT_PUBLIC_PREX_API_KEY=${apiKey}
-      }`
+      `NEXT_PUBLIC_DRY_RUN=true\nNEXT_PUBLIC_PREX_PROJECT_NAME=${projectName}\nNEXT_PUBLIC_PREX_POLICY_ID=${policyId}\nNEXT_PUBLIC_PREX_API_KEY=${apiKey}`
     );
   
   } else {
     await fs.promises.writeFile(
       envPath,
-      `NEXT_PUBLIC_PREX_PROJECT_NAME=${projectName}\nNEXT_PUBLIC_PREX_POLICY_ID=${policyId}\nNEXT_PUBLIC_PREX_API_KEY=${apiKey}\NEXT_PUBLIC_REOWN_PROJECT_ID=${
+      `NEXT_PUBLIC_DRY_RUN=true\nNEXT_PUBLIC_PREX_PROJECT_NAME=${projectName}\nNEXT_PUBLIC_PREX_POLICY_ID=${policyId}\nNEXT_PUBLIC_PREX_API_KEY=${apiKey}\NEXT_PUBLIC_REOWN_PROJECT_ID=${
         reownProjectId
       }`
     );
