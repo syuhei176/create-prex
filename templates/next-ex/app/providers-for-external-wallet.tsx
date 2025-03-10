@@ -14,8 +14,7 @@ import {
   metaMaskWallet,
   coinbaseWallet,
   rabbyWallet,
-  okxWallet,
-  walletConnectWallet
+  okxWallet
 } from '@rainbow-me/rainbowkit/wallets'
 
 const queryClient = new QueryClient()

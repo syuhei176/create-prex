@@ -1,4 +1,4 @@
-import { Swap, SwapToggleButton, SwapButton, SwapMessage, SwapAmountSimpleInput, SwapBalance, SwapTokenSelector, SwapAmountForm } from "@prex0/uikit/swap"
+import { Swap, SwapToggleButton, SwapButton, SwapMessage, SwapBalance, SwapTokenSelector, SwapAmountForm } from "@prex0/uikit/swap"
 import { Header } from "./header"
 import { ArrowDown, Info, Zap } from "lucide-react"
 import { AmountFormInput, AmountFormMaxButton, USDC_TOKEN_ARBITRUM, WETH_TOKEN_ARBITRUM } from "@prex0/uikit";
